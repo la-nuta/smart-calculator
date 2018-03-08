@@ -1,27 +1,42 @@
 class SmartCalculator {
-  constructor(initialValue) {
-    // your implementation
-  }
+    constructor(initialValue) {
+        SmartCalculator.calculation = `${initialValue}`;
+        this.number = 0;
+    }
 
-  add(number) {
-    // your implementation
-  }
-  
-  subtract(number) {
-    // your implementation
-  }
+    add(number) {
+        SmartCalculator.calculation = SmartCalculator.calculation.concat(`+${number}`);
+        this.number = (eval(SmartCalculator.calculation));
+        return this;
+    }
 
-  multiply(number) {
-    // your implementation
-  }
+    subtract(number) {
+        SmartCalculator.calculation = SmartCalculator.calculation.concat(`-${number}`);
+        this.number = (eval(SmartCalculator.calculation));
+        return this;
+    }
 
-  devide(number) {
-    // your implementation
-  }
+    multiply(number) {
+        SmartCalculator.calculation = SmartCalculator.calculation.concat(`*${number}`);
+        this.number = (eval(SmartCalculator.calculation));
+        return this;
+    }
 
-  pow(number) {
-    // your implementation
-  }
+    devide(number) {
+        SmartCalculator.calculation = SmartCalculator.calculation.concat(`/${number}`);
+        this.number = (eval(SmartCalculator.calculation));
+        return this;
+    }
+
+    pow(number) {
+        SmartCalculator.calculation = SmartCalculator.calculation.concat(`**${number}`);
+        this.number = (eval(SmartCalculator.calculation));
+        return this;
+    }
+
+    valueOf(){
+        return this.number;
+    }
 }
 
 module.exports = SmartCalculator;
